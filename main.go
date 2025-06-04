@@ -15,6 +15,9 @@ type Order struct {
 }
 
 func main() {
+
+	fmt.Println("yoyoyo")
+
 	// Serve static frontend files from the ./static folder
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
@@ -46,6 +49,8 @@ func handleOrder(w http.ResponseWriter, r *http.Request) {
 
 	// Log the received order (or process/store it)
 	log.Printf("Received order: %+v\n", order)
+
+	fmt.Println("hi")
 
 	// Respond to client
 	w.Header().Set("Content-Type", "application/json")
